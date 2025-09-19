@@ -1,7 +1,18 @@
 /* Estilos generales */
-body {
-    background-color: #f8f9fa;
+:root {
+    /* Primario verde y acento naranja */
+    --bs-primary: #198754; /* verde */
+    --bs-primary-rgb: 25, 135, 84; /* necesario para .bg-primary */
+    --color-accent: #fd7e14; /* naranja */
+    --color-bg: #ffffff; /* blanco */
 }
+
+body {
+    background-color: var(--color-bg);
+}
+
+/* Tema: definir color primario verde (compatible con Bootstrap) */
+/* (ya definido arriba) */
 
 /* Estilos para el mapa */
 #mapa {
@@ -19,22 +30,32 @@ body {
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef;
+    background-color: rgba(253, 126, 20, 0.12); /* naranja suave */
     transform: translateX(5px);
 }
 
 /* Estilos para los botones de grados */
 .btn-outline-primary {
-    border: 2px solid #0d6efd;
+    border: 2px solid var(--bs-primary);
     padding: 0.5rem;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .btn-outline-primary:hover {
-    background-color: #0d6efd;
-    color: white;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
     transform: translateY(-2px);
+}
+
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.35);
+}
+
+button:focus, a:focus {
+    outline: 3px solid rgba(253, 126, 20, 0.45);
+    outline-offset: 2px;
 }
 
 /* Estilos para las tarjetas */
@@ -50,13 +71,39 @@ body {
 }
 
 .card-title {
-    color: #0d6efd;
+    color: var(--bs-primary);
     margin-bottom: 1.5rem;
 }
 
 /* Estilos para la navegación */
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Marca de la navbar con acento naranja al hover */
+.navbar .navbar-brand {
+    color: #ffffff;
+    transition: color 0.2s ease;
+}
+
+.navbar .navbar-brand:hover {
+    color: var(--color-accent);
+}
+
+/* Botón primario sólido: verde con hover naranja */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.35);
 }
 
 /* Estilos responsive */

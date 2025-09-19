@@ -82,6 +82,8 @@ function mostrarCursos() {
         button.type = 'button';
         button.setAttribute('data-bs-toggle', 'collapse');
         button.setAttribute('data-bs-target', `#cursos-${grado}`);
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', `cursos-${grado}`);
         button.innerHTML = `
             <div class="d-flex justify-content-between align-items-center">
                 <span>Grado ${grado}</span>
@@ -103,14 +105,14 @@ function mostrarCursos() {
 
         cursosOrdenados.forEach(curso => {
             const li = document.createElement('li');
-            li.className = 'list-group-item';
-            
-            // Crear el enlace con el nombre
+            li.className = 'list-group-item position-relative';
+
+            // Crear el enlace que cubre todo el item
             const a = document.createElement('a');
             a.href = curso.ruta;
-            a.className = 'text-decoration-none';
+            a.className = 'text-decoration-none stretched-link';
             a.textContent = curso.nombre;
-            
+
             li.appendChild(a);
             ul.appendChild(li);
         });
@@ -118,6 +120,19 @@ function mostrarCursos() {
         divCursos.appendChild(ul);
         listaCursos.appendChild(button);
         listaCursos.appendChild(divCursos);
+
+        // Sincronizar icono y aria-expanded con eventos de Bootstrap Collapse
+        const collapseInstance = new bootstrap.Collapse(divCursos, { toggle: false });
+        divCursos.addEventListener('show.bs.collapse', () => {
+            button.setAttribute('aria-expanded', 'true');
+            const icon = button.querySelector('i');
+            if (icon) icon.classList.add('fa-rotate-180');
+        });
+        divCursos.addEventListener('hide.bs.collapse', () => {
+            button.setAttribute('aria-expanded', 'false');
+            const icon = button.querySelector('i');
+            if (icon) icon.classList.remove('fa-rotate-180');
+        });
     });
 }
 
@@ -142,10 +157,10 @@ function mostrarOtros() {
 
     espaciosOrdenados.forEach(espacio => {
         const li = document.createElement('li');
-        li.className = 'list-group-item';
+        li.className = 'list-group-item position-relative';
         const a = document.createElement('a');
         a.href = espacio.ruta;
-        a.className = 'text-decoration-none d-block';
+        a.className = 'text-decoration-none d-block stretched-link';
         a.textContent = espacio.nombre;
         li.appendChild(a);
         ul.appendChild(li);
