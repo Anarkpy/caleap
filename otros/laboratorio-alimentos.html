@@ -26,23 +26,32 @@
 
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-8">
-                <h1 id="nombre-espacio">Laboratorio-Alimentos</h1>
-                <div class="espacio-imagen text-center p-3" style="background-color: #f8f9fa; border-radius: 8px;">
-                    <img src="../images/lab_alimentos.jpg" alt="Laboratorio de Alimentos" class="img-fluid rounded shadow" style="max-height: 400px; max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                </div>
-                <div class="espacio-descripcion mt-4">
-                    <p id="descripcion-espacio">Descripción del espacio...</p>
+            <!-- Información del espacio -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Laboratorio de Alimentos</h5>
+                        <div class="mb-3">
+                            <img src="../images/ubicacion-laboratorio-alimentos.jpg" alt="Portada del Laboratorio de Alimentos" class="img-fluid mb-3" id="portada">
+                        </div>
+                        <h6>Descripción:</h6>
+                        <p>Espacio equipado para prácticas de ciencias de los alimentos y nutrición.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="espacio-info">
-                    <h3>Información</h3>
-                    <ul>
-                        <li id="ubicacion">Ubicación: </li>
-                        <li id="horario">Horario: </li>
-                        <li id="contacto">Contacto: </li>
-                    </ul>
+
+            <!-- Mapa y ruta -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ubicación y Ruta</h5>
+                        <div class="mb-3">
+                            <img src="../images/lab_alimentos.jpg" alt="Ubicación del Laboratorio de Alimentos" class="img-fluid mb-3" id="mapa">
+                        </div>
+                        <div id="ruta">
+                            <!-- La ruta se mostrará dinámicamente -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

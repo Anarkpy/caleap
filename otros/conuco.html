@@ -24,25 +24,34 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+        <div class="container mt-4">
         <div class="row">
-            <div class="col-md-8">
-                <h1 id="nombre-espacio">Conuco</h1>
-                <div class="espacio-imagen text-center">
-                    <img src="../images/conuco.jpg" alt="Conuco del Colegio" class="img-fluid rounded shadow" style="max-height: 400px; width: auto;">
-                </div>
-                <div class="espacio-descripcion mt-4">
-                    <p id="descripcion-espacio">Descripción del espacio...</p>
+            <!-- Información del espacio -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Conuco</h5>
+                        <div class="mb-3">
+                            <img src="../images/ubicacion-conuco.jpg" alt="Portada de Conuco" class="img-fluid mb-3" id="portada">
+                        </div>
+                        <h6>Descripción:</h6>
+                        <p>Espacio destinado para actividades tecnológicas y de creatividad.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="espacio-info">
-                    <h3>Información</h3>
-                    <ul>
-                        <li id="ubicacion">Ubicación: </li>
-                        <li id="horario">Horario: </li>
-                        <li id="contacto">Contacto: </li>
-                    </ul>
+
+            <!-- Mapa y ruta -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ubicación y Ruta</h5>
+                        <div class="mb-3">
+                            <img src="../images/conuco.jpg" alt="Ubicación de Conuco" class="img-fluid mb-3" id="mapa">
+                        </div>
+                        <div id="ruta">
+                            <!-- La ruta se mostrará dinámicamente -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
